@@ -60,7 +60,7 @@ jobs:
     
   slackNotification:
         name: Slack Notification
-        needs: deploy
+        needs: build
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v2
@@ -71,4 +71,4 @@ jobs:
             SLACK_TITLE: Post Title
             SLACK_USERNAME: sonu
             SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-            SLACK_MESSAGE: "This is your custom message."
+            SLACK_MESSAGE: "PR Raised"
