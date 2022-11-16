@@ -55,3 +55,19 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build
+  
+
+    
+  slackNotification:
+        name: Slack Notification
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+        - name: Slack Notification
+          uses: rtCamp/action-slack-notify@v2
+          env:
+            SLACK_CHANNEL: general
+            SLACK_TITLE: Post Title
+            SLACK_USERNAME: sonu
+            SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+            SLACK_MESSAGE: "This is your custom message."
