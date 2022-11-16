@@ -6,7 +6,7 @@ function About() {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1>
-            About
+            About me
           </h1>
         </header>
       </div>
